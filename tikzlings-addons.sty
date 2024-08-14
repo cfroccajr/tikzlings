@@ -180,8 +180,8 @@
   alien/.code             = \thing@alientrue       
                             \def\thing@alien{#1},
   alien/.default          = green,
-  cap/.code               =\thing@captrue
-                            \def\thing@cap{#1},
+  cap/.code               =\true
+                            \def\{#1},
   cap/.default            =green,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
@@ -540,10 +540,10 @@
 \fi
 %
 % cap %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% cap code copied from tikzducks package %
+% cap code copied and modified from tikzducks package %
 \ifthing@cap
-  \fill[\thing@cap, start angle=0, end angle=150, radius=0.5] (1.4,1.75) arc;
-  \fill[\thing@cap,rotate=-15] (0.3,2.05) ellipse[x radius=0.6, y radius=0.15];
+  \fill[\thing@cap,rotate around={-15:(-0.05,2)},color=red] (-0.05,2) ellipse[x radius=0.6, y radius=0.15];
+  \fill[\thing@cap, start angle=0, end angle=150, radius=0.5,color=red] (0.53,1.85) arc;
 \fi  
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
