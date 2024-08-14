@@ -71,6 +71,7 @@
 \newif\ifthing@chef
 \newif\ifthing@graduate
 \newif\ifthing@alien
+\newif\ifthing@cap
 % Communication %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifthing@book
 \newif\ifthing@signpost
@@ -178,7 +179,10 @@
   tassel                  = red,
   alien/.code             = \thing@alientrue       
                             \def\thing@alien{#1},
-  alien/.default          = green,   
+  alien/.default          = green,
+  cap/.code               =\thing@captrue
+                            \def\thing@cap{#1},
+  cap/.default            =green,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Communication
@@ -534,6 +538,13 @@
   \fill[\thing@alien] (-0.22,2.30) circle[radius=0.07];
   \fill[\thing@alien] (0.22,2.30) circle[radius=0.07];
 \fi
+%
+% cap %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% cap code copied from tikzducks package %
+\ifthing@cap
+  \fill[\thing@cap, start angle=0, end angle=150, radius=0.5] (1.4,1.75) arc;
+  \fill[\thing@cap,rotate=-15] (0.3,2.05) ellipse[x radius=0.6, y radius=0.15];
+\fi  
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
